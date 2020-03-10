@@ -16,6 +16,7 @@ const httpServer = http.createServer((req, res) => {
   // Get the path from the url
   const path = parsedUrl.pathname; // untrimmed path
   const trimmedPath = path.replace(/^\/+|\/+$/g, ''); // remove the slashes from both ends
+  console.log('trimmedPath: ', trimmedPath.length);
 
   // Get the query string as an object
   const queryStringObject = parsedUrl.query;
@@ -48,6 +49,7 @@ const httpServer = http.createServer((req, res) => {
       headers,
       payload: buffer,
     };
+
 
     // Route the request to the handler specified in the router
     chosenHandler(data, (statusCode, payload) => {

@@ -9,7 +9,7 @@ const handlers = {};
 // this allows only a GET request
 handlers.acceptableMethod = function (data) {
   const { method } = data;
-  if (method === 'GET') return true;
+  if (method === 'GET' || method === 'POST') return true;
 
   return false;
 };
@@ -18,6 +18,13 @@ handlers.ping = (data, callback) => {
   // callback a http status code and a payload => no payload required here
   callback(200, 'API is still alive');
 };
+
+handlers.index = (data, callback) => {
+  // callback 200 to the index route
+  callback(200, 'Make a GET request to /game including the board as a query string');
+};
+
+
 // game handler to play tic-tac-toe
 handlers.game = (data, callback) => {
   if (handlers.acceptableMethod(data)) {
