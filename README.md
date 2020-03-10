@@ -6,6 +6,8 @@ Jest and supertest was installed for testing
 
 API is currently deployed on Heroku https://tictactoe-wave-api.herokuapp.com/
 
+Please interact with the game at https://tictactoe-wave-api.herokuapp.com/game
+
 ## Interacting with the API
 
 You can interact with the API by making GET request to the API
