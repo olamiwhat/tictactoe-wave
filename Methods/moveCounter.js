@@ -9,7 +9,7 @@ function moveCounter(board) {
   board.forEach((element) => {
     if (element !== ' ') counter += 1;
   });
-  console.log('counter: ', counter);
+  // console.log('counter: ', counter);
   return counter;
 }
 

@@ -1,13 +1,13 @@
 {
   "name": "wave_mobile",
   "version": "1.0.0",
-  "description": "",
+  "description": "The API was built mainly with vanilla Node.js No external dependencies except for testing Jest and supertest was installed for testing",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

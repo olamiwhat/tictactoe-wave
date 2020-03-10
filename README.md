@@ -2,7 +2,7 @@
 
 The API was built mainly with vanilla Node.js
 No external dependencies except for testing
-Jest was installed for testing
+Jest and supertest was installed for testing
 
 API is currently deployed on Heroku https://tictactoe-wave-api.herokuapp.com/
 
