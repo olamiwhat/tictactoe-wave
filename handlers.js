@@ -39,7 +39,7 @@ handlers.game = (data, callback) => {
         if (gameStatus && gameStatus.includes('Wins')) {
           callback(200, gameStatus);
         } else if (gameStatus && gameStatus === 'Tie') {
-          callback(200, `The game ${validBoard} has ended in a tie`);
+          callback(200, `${validBoard}`);
         } else if (gameStatus && gameStatus === 'In Progress') {
           // check if it is the server's turn to play
           const serverTurn = isServerTurn(validBoard);
