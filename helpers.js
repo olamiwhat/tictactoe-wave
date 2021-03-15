@@ -5,7 +5,7 @@
 // dependencies
 const { winner } = require('./Methods/checkStatus');
 
-// Declare helper object
+// Helper object
 const helpers = {};
 
 // check if the board is a valid board
