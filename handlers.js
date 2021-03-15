@@ -3,7 +3,7 @@ const { validateBoard, boardStatus, isServerTurn } = require('./helpers');
 const getPosition = require('./Methods/getPosition');
 const play = require('./Methods/play');
 
-// define the route handlers
+// route handlers
 const handlers = {};
 // since game is only played by sending a get request,
 // this allows only a GET request
