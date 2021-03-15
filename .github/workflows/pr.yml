@@ -12,8 +12,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          # token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          reaction-type: '+1'
+          body: |
+            👋 Hey, your branch is being deployed for review.
+
       - name: Checkout
         uses: actions/checkout@v1
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: get event data
         env:
