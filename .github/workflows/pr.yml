@@ -3,6 +3,8 @@ name: Get PR context
 on:
   pull_request:
     types: [opened]
+    branches:
+      - master
 
 jobs:
   Context:
@@ -18,4 +20,16 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "GITHUB_CONTEXT: $GITHUB_CONTEXT"
+
+      - name: get needed context
+        run: |
+          echo "ref: ${{ github.event.pull_request.head.ref }}"
+          echo "repo: ${{ github.event.repository.full_name }}"
+          echo "repo_name: ${{ github.event.repository.name }}"
+          echo "tags: ${{ github.event.pull_request.head.sha }}"
+          echo "sha: ${{ github.event.pull_request.head.sha }}"
+          echo "pr_number: ${{ github.event.pull_request.number }}"
+          echo "actor: ${{ github.actor }}"
+
+      
 
