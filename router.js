@@ -2,7 +2,7 @@
 const handlers = require('./handlers');
 
 
-// Define request router
+// request router
 const router = {
   '': handlers.index,
   ping: handlers.ping,
