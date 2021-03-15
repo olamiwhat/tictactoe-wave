@@ -1,0 +1,21 @@
+name: Get PR context
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  Context:
+    name: context
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: get event data
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "GITHUB_CONTEXT: $GITHUB_CONTEXT"
+
