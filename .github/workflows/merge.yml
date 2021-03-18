@@ -1,0 +1,15 @@
+name: CD on merge to master
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: git context
+        env:
+          GIT_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GIT_CONTEXT"
