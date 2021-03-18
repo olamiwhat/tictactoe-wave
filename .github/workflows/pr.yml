@@ -21,6 +21,11 @@ jobs:
           body: |
             👋 Hey, your branch is being deployed for review.
 
+      - name: get number
+        env:
+          V_CODE: "$GITHUB_RUN_NUMBER"
+        run: echo "$V_CODE"
+
       - name: Checkout
         uses: actions/checkout@v1
         with:
