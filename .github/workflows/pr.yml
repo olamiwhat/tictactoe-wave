@@ -1,4 +1,4 @@
-# name: Get PR context
+# name: Get PR context and dump
 
 # on:
 #   pull_request:
