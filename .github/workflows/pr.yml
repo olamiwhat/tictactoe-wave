@@ -1,46 +1,46 @@
-name: Get PR context
+# name: Get PR context
 
-on:
-  pull_request:
-    types: [opened]
-    branches:
-      - master
+# on:
+#   pull_request:
+#     types: [opened]
+#     branches:
+#       - master
 
-jobs:
-  Context:
-    name: context
-    runs-on: ubuntu-latest
+# jobs:
+#   Context:
+#     name: context
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Create comment
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          # token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          issue-number: ${{ github.event.pull_request.number }}
-          reaction-type: '+1'
-          body: |
-            👋 Hey, your branch is being deployed for review.
+#     steps:
+#       - name: Create comment
+#         uses: peter-evans/create-or-update-comment@v1
+#         with:
+#           # token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+#           issue-number: ${{ github.event.pull_request.number }}
+#           reaction-type: '+1'
+#           body: |
+#             👋 Hey, your branch is being deployed for review.
 
-      - name: Checkout
-        uses: actions/checkout@v1
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
+#       - name: Checkout
+#         uses: actions/checkout@v1
+#         with:
+#           ref: ${{ github.event.pull_request.head.ref }}
 
-      - name: get event data
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
-          echo "GITHUB_CONTEXT: $GITHUB_CONTEXT"
+#       - name: get event data
+#         env:
+#           GITHUB_CONTEXT: ${{ toJson(github) }}
+#         run: |
+#           echo "GITHUB_CONTEXT: $GITHUB_CONTEXT"
 
-      - name: get needed context
-        run: |
-          echo "ref: ${{ github.event.pull_request.head.ref }}"
-          echo "repo: ${{ github.event.repository.full_name }}"
-          echo "repo_name: ${{ github.event.repository.name }}"
-          echo "tags: ${{ github.event.pull_request.head.sha }}"
-          echo "sha: ${{ github.event.pull_request.head.sha }}"
-          echo "pr_number: ${{ github.event.pull_request.number }}"
-          echo "actor: ${{ github.actor }}"
+#       - name: get needed context
+#         run: |
+#           echo "ref: ${{ github.event.pull_request.head.ref }}"
+#           echo "repo: ${{ github.event.repository.full_name }}"
+#           echo "repo_name: ${{ github.event.repository.name }}"
+#           echo "tags: ${{ github.event.pull_request.head.sha }}"
+#           echo "sha: ${{ github.event.pull_request.head.sha }}"
+#           echo "pr_number: ${{ github.event.pull_request.number }}"
+#           echo "actor: ${{ github.actor }}"
 
       
 
