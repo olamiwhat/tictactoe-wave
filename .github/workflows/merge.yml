@@ -1,20 +1,20 @@
-name: CD on merge to master
-on:
-  pull_request:
-    types: [closed]
-    branches:
-      - master
+# name: CD on merge to master
+# on:
+#   pull_request:
+#     types: [closed]
+#     branches:
+#       - master
 
-jobs:
-  deployment:
-    if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
+# jobs:
+#   deployment:
+#     if: github.event.pull_request.merged == true
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: git context
-        env:
-          GIT_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GIT_CONTEXT"
+#     steps:
+#       - name: git context
+#         env:
+#           GIT_CONTEXT: ${{ toJson(github) }}
+#         run: echo "$GIT_CONTEXT"
 
-      - name: get branch name
-        run: echo "${{ github.head_ref }}"
+#       - name: get branch name
+#         run: echo "${{ github.head_ref }}"
